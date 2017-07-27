@@ -133,10 +133,113 @@
 
 	console.log('函数参数的解构赋值-------------');
 
-	function fun1([a,b]) {
-		console.log('a',a);
-		console.log('b',b);
+	function fun1([a,b,c=100,d=1000]) {
+		console.log('a',a);//1
+		console.log('b',b);//2
+		console.log('c',c);//120
+		console.log('d',d);//1000
 	}
 
-	fun1([1,2])
+	fun1([1,2,120,undefined])
+
+	function fun2({x=0,y=0} = {},b) {
+		return [x,y,b]
+	}
+	console.log(fun2({x:1,y:2},100));
+	console.log(fun2({x:1}));
+	console.log(fun2({}));
+
+	function move({x, y} = { x: 0, y: 0 }) {
+		// 此时是让{x, y}默认等于{ x: 0, y: 0 }，若穿入了参数就
+		//不等于{ x: 0, y: 0 }
+	  return [x, y];
+	}
+
+	console.log(move({x: 3, y: 8})); // [3, 8]
+	console.log(move({x: 3})); // [3, undefined]
+	console.log(move({})); // [undefined, undefined]
+	console.log(move()); // [0, 0]
+
+	function fun3(a=2) {
+		console.log(a);
+	}
+	fun3(3);//3
+	fun3();//2
+
+	[1, undefined, 3].map((x = 'yes') => x);
+	//为undefined时默认值生效
+	// [ 1, 'yes', 3 ]
+
+	
 })();
+
+//6、用途
+(function () {
+	let x=1;
+	let y=2;
+	[x,y] = [y,x];
+	console.log('x',x,'y',y);
+
+	function bubblesort(arr) {
+		let flag=false;
+		for(var i=0;i<arr.length-1;i++){
+
+			flag=false;
+			for(var j=1;j<arr.length-i-1;j++){
+				if(arr[j]>arr[j+1]){
+					flag=true;
+					[arr[j],arr[j+1]]=[arr[j+1],arr[j]];
+				}
+			}
+			if(!flag){
+				break;
+			}
+		}
+		console.log(arr);
+	}
+
+
+	function example(){
+		return [1,23,4];
+	}
+	let [a,b,c]=example();
+	console.log('a',a);
+	console.log('b',b);
+	console.log('c',c);
+	function objex() {
+		return {
+			foo:100,
+			bar:200
+		}
+	}
+
+	let {foo:fo,bar:ba} = objex();
+	console.log('fo',fo);
+	console.log('ba',ba);
+
+
+	//解构赋值可以方便地将一组参数与变量名对应起来。
+	// 参数是一组有次序的值
+	function f([x, y, z]) {}
+	f([1, 2, 3]);
+
+	// 参数是一组无次序的值
+	function f({x, y, z}) {}
+	f({z: 3, y: 2, x: 1});
+
+
+	//提取json数据
+
+	let JSONdata = {
+		id:1,
+		name:'hhh'
+	}
+
+
+	let { id , name } =JSONdata;
+	console.log('id',id);
+	console.log('name',name);
+
+	//加载模块指定需要哪些方法
+	const { SourceMapConsumer, SourceNode } = require("source-map");
+}())
