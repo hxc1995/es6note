@@ -1,4 +1,4 @@
-// 1、数组的结构赋值--------------------------------------------
+// 1、数组的解构赋值--------------------------------------------
 (function(){
 	let [a,b,c]=[1,2,3];
 	console.log('a',a);
@@ -39,16 +39,16 @@
 	console.log('指定默认值---------------------');
 
 	let[fa=12,fb]=[100,100];
-	console.log('fa',fa);
-	console.log('fb',fb);
+	console.log('fa',fa);//100
+	console.log('fb',fb);//100
 
 	//ES6 内部使用严格相等运算符（===），判断一个位置是否有值。
 	//所以，如果一个数组成员不严格等于undefined，默认值是不会生效的。
 	//可以给定默认值，若严格等于undefined,默认值才有效，不然被覆盖
 	let[fc=12,fd,fe=12]=[undefined,100,null];
-	console.log('fc',fc);
-	console.log('fd',fd);
-	console.log('fe',fe);
+	console.log('fc',fc);//12
+	console.log('fd',fd);//100
+	console.log('fe',fe);//null
 })();//此处若不加分号，后面的会报错，因为()不自动识别加分号
 
 //2、对象的解构赋值------------------------------------------------
@@ -61,8 +61,8 @@
 	let {objfoo:ofoo,objbar:obar} = { objfoo:'foo',objbar:'bar'};
 	//objfoo和objbar只是匹配模式，真正赋值的是后面的ofoo,obar
 	//相当于去找两个对象的共同属性
-	console.log('foo',ofoo);
-	console.log('obar',obar);
+	console.log('foo',ofoo);//off
+	console.log('obar',obar);//bar
 	// console.log(objfoo);//not defined
 	// console.log(objbar);//not defined
 	//和数组一样严格等于undefined默认值才有效，也可以给定默认值，
@@ -94,20 +94,19 @@
 
 (function(){
 	const [a,b,c,d,e,f]='hello';
-	console.log('a',a);
-	console.log('b',b);
-	console.log('C',c);
-	console.log('d',d);
-	console.log('e',e);
-	console.log('f',f);
-	console.log('length',length);
+	console.log('a',a);//h
+	console.log('b',b);//e
+	console.log('C',c);//l
+	console.log('d',d);//l
+	console.log('e',e);//o
+	console.log('f',f);//undefined
 
 	//类似数组的对象都有一个length属性，因此还可以对这个属性解构赋值
 	let {length:len} = 'hello';
-	console.log(len);
+	console.log(len);//5
 
 	let {length:lena} = [1,2,3,4,5,6,7,8,9,0];
-	console.log('数组的length',lena);
+	console.log('数组的length',lena);//10
 })();
 
 // 4、数值和布尔值的解构赋值
@@ -241,5 +240,5 @@
 	console.log('name',name);
 
 	//加载模块指定需要哪些方法
-	const { SourceMapConsumer, SourceNode } = require("source-map");
+	// const { SourceMapConsumer, SourceNode } = require("source-map");
 }())
