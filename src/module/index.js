@@ -25,10 +25,10 @@ console.log(de);
 //下面的方式可以输入到所有的输入
 import * as objde from './exportDefault.js'
 console.log(objde);
-import d, { others , name } from './exportDefault.js'
+import d, { name, others  } from './exportDefault.js'
 console.log(d);
+console.log(name);
 console.log(others);
-
 
 
 // export {name , year } from './profile.js';
@@ -37,4 +37,4 @@ console.log(others);
  // import { name ,year } from './profile.js';
  // export {name , year};
 
-export * from './profile.js';//整体输入输入的
+export * from './profile.js';//整体输出的

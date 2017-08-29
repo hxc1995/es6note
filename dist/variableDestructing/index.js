@@ -3,6 +3,20 @@
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
 // 1、数组的解构赋值--------------------------------------------
+function aa(_ref) {
+	var aa = _ref.a,
+	    bb = _ref.b;
+
+	console.log(arguments);
+	console.log('aaaaaaaaa');
+	console.log(aa);
+	console.log(bb);
+	console.log(a);
+	console.log(b);
+}
+
+aa({ a: 100, b: 1000 });
+
 (function () {
 	var a = 1,
 	    b = 2,
@@ -15,8 +29,8 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 	var foo = 1,
 	    bar = 2,
 	    baz = 3;
-	var _ref = ["foo", "bar", "baz"],
-	    third = _ref[2];
+	var _ref2 = ["foo", "bar", "baz"],
+	    third = _ref2[2];
 	// third // "baz"
 
 	// let [x, , y] = [1, 2, 3];
@@ -29,10 +43,10 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 	console.log('head', head); // 1
 	console.log('tail', tail); // [2, 3, 4]
 
-	var _ref2 = ['a'],
-	    x = _ref2[0],
-	    y = _ref2[1],
-	    z = _ref2.slice(2);
+	var _ref3 = ['a'],
+	    x = _ref3[0],
+	    y = _ref3[1],
+	    z = _ref3.slice(2);
 
 	console.log('x', x); // "a"
 	console.log('y', y); // undefined
@@ -49,11 +63,11 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 
 	//对于 Set 结构，也可以使用数组的解构赋值。
 
-	var _ref3 = new Set(['a', 'b', 'c']),
-	    _ref4 = _slicedToArray(_ref3, 3),
-	    sx = _ref4[0],
-	    sy = _ref4[1],
-	    sz = _ref4[2];
+	var _ref4 = new Set(['a', 'b', 'c']),
+	    _ref5 = _slicedToArray(_ref4, 3),
+	    sx = _ref5[0],
+	    sy = _ref5[1],
+	    sz = _ref5[2];
 
 	console.log(sx);
 
@@ -72,8 +86,8 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 	var _undefined = undefined,
 	    fc = _undefined === undefined ? 12 : _undefined,
 	    fd = 100,
-	    _ref5 = null,
-	    fe = _ref5 === undefined ? 12 : _ref5;
+	    _ref6 = null,
+	    fe = _ref6 === undefined ? 12 : _ref6;
 
 	console.log('fc', fc); //12
 	console.log('fd', fd); //100
@@ -141,22 +155,22 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 	    e = _hello2[4],
 	    f = _hello2[5];
 
-	console.log('a', a);
-	console.log('b', b);
-	console.log('C', c);
-	console.log('d', d);
-	console.log('e', e);
-	console.log('f', f);
+	console.log('a', a); //h
+	console.log('b', b); //e
+	console.log('C', c); //l
+	console.log('d', d); //l
+	console.log('e', e); //o
+	console.log('f', f); //undefined
 
 	//类似数组的对象都有一个length属性，因此还可以对这个属性解构赋值
 	var _hello3 = 'hello',
 	    len = _hello3.length;
 
-	console.log(len);
+	console.log(len); //5
 
 	var lena = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0].length;
 
-	console.log('数组的length', lena);
+	console.log('数组的length', lena); //10
 })();
 
 // 4、数值和布尔值的解构赋值
@@ -179,8 +193,8 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
  */
 	var x = undefined.prop; // TypeError
 
-	var _ref6 = null,
-	    y = _ref6.prop; // TypeError
+	var _ref7 = null,
+	    y = _ref7.prop; // TypeError
 });
 
 //5函数参数的解构赋值
@@ -188,14 +202,14 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 
 	console.log('函数参数的解构赋值-------------');
 
-	function fun1(_ref7) {
-		var _ref8 = _slicedToArray(_ref7, 4),
-		    a = _ref8[0],
-		    b = _ref8[1],
-		    _ref8$ = _ref8[2],
-		    c = _ref8$ === undefined ? 100 : _ref8$,
-		    _ref8$2 = _ref8[3],
-		    d = _ref8$2 === undefined ? 1000 : _ref8$2;
+	function fun1(_ref8) {
+		var _ref9 = _slicedToArray(_ref8, 4),
+		    a = _ref9[0],
+		    b = _ref9[1],
+		    _ref9$ = _ref9[2],
+		    c = _ref9$ === undefined ? 100 : _ref9$,
+		    _ref9$2 = _ref9[3],
+		    d = _ref9$2 === undefined ? 1000 : _ref9$2;
 
 		console.log('a', a); //1
 		console.log('b', b); //2
@@ -206,11 +220,11 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 	fun1([1, 2, 120, undefined]);
 
 	function fun2() {
-		var _ref9 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-		    _ref9$x = _ref9.x,
-		    x = _ref9$x === undefined ? 0 : _ref9$x,
-		    _ref9$y = _ref9.y,
-		    y = _ref9$y === undefined ? 0 : _ref9$y;
+		var _ref10 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+		    _ref10$x = _ref10.x,
+		    x = _ref10$x === undefined ? 0 : _ref10$x,
+		    _ref10$y = _ref10.y,
+		    y = _ref10$y === undefined ? 0 : _ref10$y;
 
 		var b = arguments[1];
 
@@ -221,9 +235,9 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 	console.log(fun2({}));
 
 	function move() {
-		var _ref10 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { x: 0, y: 0 },
-		    x = _ref10.x,
-		    y = _ref10.y;
+		var _ref11 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { x: 0, y: 0 },
+		    x = _ref11.x,
+		    y = _ref11.y;
 
 		// 此时是让{x, y}默认等于{ x: 0, y: 0 }，若穿入了参数就
 		//不等于{ x: 0, y: 0 }
@@ -256,9 +270,9 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 (function () {
 	var x = 1;
 	var y = 2;
-	var _ref11 = [y, x];
-	x = _ref11[0];
-	y = _ref11[1];
+	var _ref12 = [y, x];
+	x = _ref12[0];
+	y = _ref12[1];
 
 	console.log('x', x, 'y', y);
 
@@ -270,9 +284,9 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 			for (var j = 1; j < arr.length - i - 1; j++) {
 				if (arr[j] > arr[j + 1]) {
 					flag = true;
-					var _ref12 = [arr[j + 1], arr[j]];
-					arr[j] = _ref12[0];
-					arr[j + 1] = _ref12[1];
+					var _ref13 = [arr[j + 1], arr[j]];
+					arr[j] = _ref13[0];
+					arr[j + 1] = _ref13[1];
 				}
 			}
 			if (!flag) {
@@ -311,19 +325,19 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 
 	//解构赋值可以方便地将一组参数与变量名对应起来。
 	// 参数是一组有次序的值
-	function f(_ref13) {
-		var _ref14 = _slicedToArray(_ref13, 3),
-		    x = _ref14[0],
-		    y = _ref14[1],
-		    z = _ref14[2];
+	function f(_ref14) {
+		var _ref15 = _slicedToArray(_ref14, 3),
+		    x = _ref15[0],
+		    y = _ref15[1],
+		    z = _ref15[2];
 	}
 	f([1, 2, 3]);
 
 	// 参数是一组无次序的值
-	function f(_ref15) {
-		var x = _ref15.x,
-		    y = _ref15.y,
-		    z = _ref15.z;
+	function f(_ref16) {
+		var x = _ref16.x,
+		    y = _ref16.y,
+		    z = _ref16.z;
 	}
 	f({ z: 3, y: 2, x: 1 });
 

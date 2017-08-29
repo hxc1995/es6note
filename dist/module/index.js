@@ -50,6 +50,8 @@ console.log(objde.default);
 console.log(objde);
 
 console.log(objde.default);
+console.log(_exportDefault.name);
+//整体输出的
 console.log(_exportDefault.others);
 
 // export {name , year } from './profile.js';

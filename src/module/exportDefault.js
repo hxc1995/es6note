@@ -16,3 +16,4 @@ export default {
 // export { add as default}
 
 export let others='其他单个输出';
+export let name='不是default里面的name';

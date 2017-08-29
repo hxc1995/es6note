@@ -71,4 +71,4 @@ var ga = 1;
 console.log(window.ga); // 1
 
 var gb = 1;
-console.log(window.gb); // undefined
+console.log(global.gb); // undefined

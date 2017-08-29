@@ -1,4 +1,13 @@
 // 1、数组的解构赋值--------------------------------------------
+// function aa({a:aa,b:bb}) {
+// 	console.log(arguments);
+// 	console.log('aaaaaaaaa');
+// 	console.log(aa);
+// 	console.log(bb);
+// }
+
+// aa({a:100,b:1000});
+
 (function(){
 	let [a,b,c]=[1,2,3];
 	console.log('a',a);
@@ -178,24 +187,6 @@
 	let y=2;
 	[x,y] = [y,x];
 	console.log('x',x,'y',y);
-
-	function bubblesort(arr) {
-		let flag=false;
-		for(var i=0;i<arr.length-1;i++){
-
-			flag=false;
-			for(var j=1;j<arr.length-i-1;j++){
-				if(arr[j]>arr[j+1]){
-					flag=true;
-					[arr[j],arr[j+1]]=[arr[j+1],arr[j]];
-				}
-			}
-			if(!flag){
-				break;
-			}
-		}
-		console.log(arr);
-	}
 
 
 	function example(){

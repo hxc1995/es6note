@@ -21,3 +21,4 @@ exports.default = {
 
 };
 var others = exports.others = '其他单个输出';
+var name = exports.name = '不是default里面的name';
