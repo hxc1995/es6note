@@ -60,12 +60,12 @@ promise.then(function(value) {
 		res("p1 success");
 	}),
 	    p2 = new Promise(function (res, rej) {
-		// res("p2 success")
-		rej("p2 fail");
+		res("p2 success");
+		// rej("p2 fail")
 	}),
 	    p3 = new Promise(function (res, rej) {
-		// res("p3 success")
-		rej("p3 fail");
+		res("p3 success");
+		// rej("p3 fail")
 	});
 
 

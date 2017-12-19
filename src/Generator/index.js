@@ -1,13 +1,17 @@
 (function () {
 	function* hwgenerator(){
+		console.log('1aaaa');
 		yield 10;
 		yield 11;
+		console.log('objectaaa');
+		
 		yield 100 + 1;
 		yield 1000;
 		return "ending"
 	}
 
 	let hw = hwgenerator();
+	
 	console.log(hw.next());
 	console.log(hw.next());
 	console.log(hw.next());
